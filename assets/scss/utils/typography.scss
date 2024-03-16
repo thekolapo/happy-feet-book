@@ -1,22 +1,19 @@
 h1,
+h2,
+h3,
+h4 {
+  color: #1d1d1f;
+  font-family: 'Ogg';
+}
+
+h1,
 .u-font-h1 {
   font-size: 12rem;
   line-height: 12rem;
-  color: #1d1d1f;
-  font-family: 'Ogg';
-
-  // @include screen('small') {
-  //   font-size: 2.8rem;
-  //   line-height: 3.2rem;
-  // }
 }
 
-// .u-font-normal {
-//   font-size: 2.4rem;
-//   line-height: 3.2rem;
-
-//   @include screen(small) {
-//     font-size: 2.2rem;
-//     line-height: 3rem;
-//   }
-// }
+h2,
+.u-font-h2 {
+  font-size: 10rem;
+  line-height: 8rem;
+}
