@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="home">
     <section class="c-hero">
       <h1 class="c-hero__heading">The Boys with the Happy Feet Dance</h1>
       <p class="c-hero__subtext">
@@ -103,91 +103,141 @@
         <img src="@/assets/images/bode.png" alt="author's picture" />
       </div>
     </section>
-    <!-- <client-only>
-      <flickity
-        ref="flickity"
-        class="home__projects"
-        :options="flickityOptions"
-      >
-        <a
-          href="https://www.vistanium.com/"
-          target="_blank"
-          class="home__project home__project--vistanium"
+    <section class="c-reviews">
+      <h2 class="">The book reviews</h2>
+      <client-only>
+        <flickity
+          ref="flickity"
+          class="c-reviews__flickity"
+          :options="flickityOptions"
         >
-          <img
-            src="@/assets/images/vistanium-mag-img.jpg"
-            alt="Vistanium mag image"
-          />
-          <p class="u-font-normal">Vistanium Mag</p>
-          <p>
-            Immersive essays that narrate extraordinary true stories. They
-            provide compelling insights into life in various cities, offering
-            readers a rich, multifaceted perspective.
-          </p>
-        </a>
-        <a
-          href="https://podcasts.apple.com/us/podcast/i-too-sabi/id1653930660"
-          target="_blank"
-          class="home__project"
-        >
-          <img src="@/assets/images/i-too-sabi.jpg" alt="I too sabi image" />
-          <p class="u-font-normal">I too sabi</p>
-          <p>
-            A Nigeria-focused conversational "ask me anything" podcast that
-            answers a wide range of questions through research and expert
-            insights.
-          </p>
-        </a>
-        <a
-          href="https://www.sunandcountry.com/"
-          target="_blank"
-          class="home__project home__project--sun-country"
-        >
-          <img
-            src="@/assets/images/sun-and-country.svg"
-            alt="Sun and Country image"
-          />
-          <p class="u-font-normal">Sun and Country</p>
-          <p>
-            A story-led guide to understanding the Nigerian Civil War, capturing
-            the events that led to it, how it played out on all sides, and how
-            it continues to shape our world today.
-          </p>
-        </a>
-        <a
-          href="https://podcasts.apple.com/za/podcast/i-like-girls/id1572625602/"
-          target="_blank"
-          class="home__project home__project--i-like-girls"
-        >
-          <img
-            src="@/assets/images/i-like-girls.png"
-            alt="I like girls image"
-          />
-          <p class="u-font-normal">I like girls</p>
-          <p>
-            A documentary-style, narrative-driven podcast exploring the diverse
-            stories of African women. It offers firsthand insights into how
-            gender shapes women's lives.
-          </p>
-        </a>
-        <a
-          href="https://hundredgood.com/"
-          target="_blank"
-          class="home__project"
-        >
-          <img
-            src="@/assets/images/hundred-good.png"
-            alt="Sun and Country image"
-          />
-          <p class="u-font-normal">HundredGood</p>
-          <p>
-            An annual curation of 100 good things that have happened across
-            Africa. Every December, it offers a hopeful outlook on a continent
-            riddled with a singular narrative of negativity.
-          </p>
-        </a>
-      </flickity>
-    </client-only> -->
+          <div class="c-review">
+            <p class="c-review__comment">
+              “Her love for them absolutely pours out of every sentence, and I
+              feel it. Just beautiful.”
+            </p>
+            <p class="c-review__reviewer">— Sholabomi Tinubu</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “An eye-opener and game-changer. Emotional. Challenging. Creative.
+              Educative. Encouraging. Heartwarmingly good.”
+            </p>
+            <p class="c-review__reviewer">— Olubola Sangosanya</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “Honest, uplifting and packed with moments that’ll make you nod in
+              agreement or tear up.”
+            </p>
+            <p class="c-review__reviewer">— Moyo Makanjuola</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “Bode Abifarin isn’t your everyday children’s book author; she’s a
+              writer with a soul as vast as the universe.”
+            </p>
+            <p class="c-review__reviewer">
+              — Ayo Oyeku, author of “The Finish Line”
+            </p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “It is the rhythm in Bode Abifarin’s story that makes you see the
+              glaring innocence and originality of childhood.”
+            </p>
+            <p class="c-review__reviewer">— Chimee Adioha, Black Boy Review</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “A delightful, heartwarming tale that dances off the pages and
+              into your heart.”
+            </p>
+            <p class="c-review__reviewer">
+              — John Ajimisogbe, Child Behaviour Analyst
+            </p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “Through Abifarin’s beautifully crafted words, readers will find
+              inspiration, empathy and hope.”
+            </p>
+            <p class="c-review__reviewer">— Adéṣolá Adéyẹyè</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “On every page, you see beauty, talent, love and above all,
+              resilience. I am so inspired by the boys with the happy feet.”
+            </p>
+            <p class="c-review__reviewer">— Wunmi Adedipe</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “...a beacon of hope, affirming that with compassion,
+              understanding and support, every child can dance to their own
+              happy feet dance.”
+            </p>
+            <p class="c-review__reviewer">
+              — Janine Udogu, author of “Ala Nnam: A Journey to Isuofia”
+            </p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">“What a joyful story.”</p>
+            <p class="c-review__reviewer">— Bisi Lamikanra</p>
+          </div>
+          <div class="c-review">
+            <p class="c-review__comment">
+              “a touching book in a world where people expect certain things
+              from kids.”
+            </p>
+            <p class="c-review__reviewer">
+              — Onyinye Odinmah, committee member, Akada Children’s Book
+              Festival
+            </p>
+          </div>
+        </flickity>
+      </client-only>
+    </section>
+    <section class="c-countdown" v-if="!exceededLaunchTime">
+      <p class="c-countdown__subtext">
+        This book will be available on the
+        <span class="u-font-400">27th of March, 2024</span> which is in:
+      </p>
+      <p class="c-countdown__timer">
+        {{ countDown.days }} day(s), {{ countDown.hrs }} hrs :
+        {{ countDown.mins }} min : {{ countDown.secs }} sec
+      </p>
+    </section>
+    <section class="c-illustrations">
+      <img
+        src="@/assets/images/book-illustration.jpg"
+        alt="book illustration"
+      />
+      <img
+        src="@/assets/images/book-illustration-1.jpg"
+        alt="book illustration"
+      />
+      <img
+        src="@/assets/images/book-illustration-2.jpg"
+        alt="book illustration"
+      />
+      <img
+        src="@/assets/images/book-illustration-3.jpg"
+        alt="book illustration"
+      />
+      <img
+        src="@/assets/images/book-illustration-4.jpg"
+        alt="book illustration"
+      />
+      <img
+        src="@/assets/images/book-illustration-5.jpg"
+        alt="book illustration"
+      />
+    </section>
+    <footer class="c-footer">
+      <span>© Bode Abifarin 2024 </span>
+      <span>Made with love by <a href="">Kolapo ❤️</a></span>
+    </footer>
   </div>
 </template>
 
@@ -202,14 +252,65 @@ export default {
         wrapAround: true,
         autoPlay: 3000,
       },
+      countDown: {
+        days: '',
+        hrs: '',
+        mins: '',
+        secs: '',
+      },
+      exceededLaunchTime: false,
     }
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    this.countdownTimer('03/27/2024 00:00 AM')
+  },
+  methods: {
+    countdownTimer(dt) {
+      const end = new Date(dt)
+      const _second = 1000
+      const _minute = _second * 60
+      const _hour = _minute * 60
+      const _day = _hour * 24
+      let timer = ''
+
+      const showRemaining = () => {
+        const now = new Date()
+        const distance = end - now
+        if (distance < 0) {
+          clearInterval(timer)
+          this.exceededLaunchTime = true
+          return
+        }
+        const days = Math.floor(distance / _day)
+        const hours = Math.floor((distance % _day) / _hour)
+        const minutes = Math.floor((distance % _hour) / _minute)
+        const seconds = Math.floor((distance % _minute) / _second)
+
+        this.countDown.days = days
+        this.countDown.hrs = hours
+        this.countDown.mins = minutes
+        this.countDown.secs = seconds < 10 ? `0${seconds}` : seconds
+      }
+
+      timer = setInterval(showRemaining, 1000)
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+.home {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+}
+
 .c-hero {
   display: flex;
   flex-direction: column;
@@ -227,6 +328,9 @@ export default {
   }
 
   button {
+    --before-transform: scale(1.1);
+    --before-border: 1px dashed #1d1d1f;
+    --after-transform: translate(50%, -30%) scale(0.7);
     $size: 16rem;
     position: relative;
     width: $size;
@@ -247,9 +351,9 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      border: 1px dashed #1d1d1f;
-      transform: scale(1.1);
-      transition: 1.2s $ease-out-expo;
+      border: var(--before-border);
+      transform: var(--before-transform);
+      transition: 1.12s $ease-out-expo;
     }
 
     &::after {
@@ -262,19 +366,14 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      transition: 1.2s $ease-out-expo;
-      transform: translate(50%, -30%) scale(0.7);
+      transition: 1.12s $ease-out-expo;
+      transform: var(--after-transform);
     }
 
     &:hover {
-      &::before {
-        transform: scale(1);
-        border: 1px dashed rgba(0, 0, 0, 0);
-      }
-
-      &::after {
-        transform: translate(0) scale(1);
-      }
+      --before-transform: scale(1);
+      --before-border: 1px dashed rgba(0, 0, 0, 0);
+      --after-transform: translate(0) scale(1);
     }
   }
 }
@@ -287,7 +386,7 @@ export default {
   margin-top: 10rem;
   // background: linear-gradient(180deg, #fff 0%, #effbf1 15%, #fff 100%);
   background: linear-gradient(180deg, #fff 0%, #effbf1 15%);
-  padding: 25rem 0;
+  padding: 25rem 0 10rem;
 
   &__container {
     max-width: 70rem;
@@ -312,10 +411,10 @@ export default {
 }
 
 .c-author {
-  padding-top: 10rem;
+  // padding-top: 25rem;
   margin-top: 0;
   // background: linear-gradient(180deg, #fff 0%, #fed2c0 100%);
-  background: linear-gradient(180deg, #effbf1 0%, #eff6fb 50%);
+  background: linear-gradient(180deg, #effbf1 0%, #eff6fb 15%);
 
   &__container {
     max-width: 75rem;
@@ -325,6 +424,107 @@ export default {
     max-height: 70rem;
     object-fit: cover;
     object-position: top;
+  }
+}
+
+.c-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25rem 0 10rem;
+  background: linear-gradient(180deg, #eff6fb 0%, #f9effb 20%);
+
+  &__flickity {
+    width: 100vw;
+    margin-top: 10rem;
+    height: auto;
+
+    .c-review {
+      width: 33vw;
+      background-color: #ffd4c3;
+      margin: 0 5rem;
+      padding: 9rem 4rem 8rem;
+
+      &__comment {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+        font-style: italic;
+      }
+
+      &__reviewer {
+        margin-top: 10rem;
+        font-weight: 400;
+      }
+    }
+
+    $colors: (#ffd4c3, #ffbdbd, #ffd0db, rgb(253, 255, 192), bisque);
+
+    @for $i from 1 through 11 {
+      $index: random(5);
+
+      .c-review:nth-child(#{$i}) {
+        background-color: nth($colors, $index);
+      }
+    }
+  }
+}
+
+.c-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25rem 0 40rem;
+  text-align: center;
+  background: linear-gradient(180deg, #f9effb 0%, #fff 50%);
+
+  &__timer {
+    font-family: 'ogg';
+    font-size: 5rem;
+    margin-top: 6rem;
+    color: #c72177;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.c-illustrations {
+  display: flex;
+  flex-wrap: wrap;
+
+  img {
+    width: 33vw;
+    height: auto;
+
+    &:nth-child(1) {
+      transform: scale(1.2) rotate(-7deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(7deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    &:nth-child(4) {
+      transform: rotate(6deg);
+    }
+
+    &:nth-child(5) {
+      transform: scale(1.2) translate(0, -10%);
+    }
+  }
+}
+
+.c-footer {
+  margin-top: 18rem;
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+
+  a {
+    color: #c72177;
+    text-decoration: none;
   }
 }
 </style>
