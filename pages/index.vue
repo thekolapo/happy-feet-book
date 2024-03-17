@@ -198,7 +198,7 @@
         </flickity>
       </client-only>
     </section>
-    <section class="c-countdown" v-if="!exceededLaunchTime">
+    <section v-if="!exceededLaunchTime" class="c-countdown">
       <p class="c-countdown__subtext">
         This book will be available on the
         <span class="u-font-400">27th of March, 2024</span> which is in:
@@ -236,7 +236,10 @@
     </section>
     <footer class="c-footer">
       <span>© Bode Abifarin 2024 </span>
-      <span>Made with love by <a href="">Kolapo ❤️</a></span>
+      <span>
+        Made with love by
+        <a href="https://twitter.com/kolapo_" target="_blank"> Kolapo ❤️ </a>
+      </span>
     </footer>
   </div>
 </template>
