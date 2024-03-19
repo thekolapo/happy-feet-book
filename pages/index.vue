@@ -201,7 +201,7 @@
     <section v-if="!exceededLaunchTime" class="c-countdown">
       <p class="c-countdown__subtext">
         This book will be available on the
-        <span class="u-font-400">27th of March, 2024</span> which is in:
+        <span class="u-font-400">6th of April, 2024</span> which is in:
       </p>
       <p class="c-countdown__timer">
         {{ countDown.days }} day(s), {{ countDown.hrs }} hrs :
