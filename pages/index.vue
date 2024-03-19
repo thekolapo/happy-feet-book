@@ -100,7 +100,7 @@
           Adventures of the Boys with the Happy Feet Dance and it chronicles
           their journey across different sports and everyday living.
         </p>
-        <img src="@/assets/images/bode.png" alt="author's picture" />
+        <img src="@/assets/images/bode.jpeg" alt="author's picture" />
       </div>
     </section>
     <section class="c-reviews">
@@ -205,7 +205,8 @@
       </p>
       <p class="c-countdown__timer">
         {{ countDown.days }} day(s), {{ countDown.hrs }} hrs :
-        {{ countDown.mins }} min : {{ countDown.secs }} sec
+        {{ countDown.mins }} min :
+        <span class="c-countdown__timer-sec">{{ countDown.secs }}</span>
       </p>
     </section>
     <section class="c-illustrations">
@@ -253,7 +254,7 @@ export default {
         prevNextButtons: false,
         pageDots: false,
         wrapAround: true,
-        autoPlay: 3000,
+        autoPlay: 1400,
       },
       countDown: {
         days: '',
@@ -265,7 +266,7 @@ export default {
     }
   },
   mounted() {
-    this.countdownTimer('03/27/2024 00:00 AM')
+    this.countdownTimer('04/6/2024 00:00 AM')
   },
   methods: {
     countdownTimer(dt) {
@@ -318,11 +319,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 17rem;
+  padding-top: 19rem;
   text-align: center;
+  background: linear-gradient(180deg, #fbeff4 0%, #fff 100%);
 
   &__heading {
-    max-width: 120rem;
+    max-width: 100rem;
   }
 
   &__subtext {
@@ -334,7 +336,7 @@ section {
     --before-transform: scale(1.1);
     --before-border: 1px dashed #1d1d1f;
     --after-transform: translate(50%, -30%) scale(0.7);
-    $size: 16rem;
+    $size: 13rem;
     position: relative;
     width: $size;
     height: $size;
@@ -344,6 +346,7 @@ section {
     margin-top: 10rem;
     font-weight: 500;
     font-size: 1.6rem;
+    z-index: 3;
 
     &::before {
       content: '';
@@ -371,6 +374,7 @@ section {
       border-radius: 100%;
       transition: 1.12s $ease-out-expo;
       transform: var(--after-transform);
+      pointer-events: none;
     }
 
     &:hover {
@@ -424,9 +428,9 @@ section {
   }
 
   img {
-    max-height: 70rem;
+    max-height: 84rem;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
   }
 }
 
@@ -486,6 +490,12 @@ section {
     margin-top: 6rem;
     color: #c72177;
     font-variant-numeric: tabular-nums;
+
+    &-sec {
+      display: inline-block;
+      width: 4.5rem;
+      text-align: left;
+    }
   }
 }
 
