@@ -855,9 +855,13 @@ section {
     max-width: 70rem;
   }
 
-  // p:not(:first-child) {
-  //   margin-top: 3rem;
-  // }
+  p:not(:first-child) {
+    margin-top: 3rem;
+
+    @include screen(small) {
+      margin-top: 2rem;
+    }
+  }
 
   img {
     width: 50vw;
