@@ -10,7 +10,7 @@
     </section>
     <section class="c-book">
       <div class="c-book__container">
-        <h2 class="">About the book</h2>
+        <h1 class="">About the book</h1>
         <p>
           "The Boys with the Happy Feet Dance" by Bode Abifarin follows two
           brothers, Nathan and Ethan, as they navigate their passions and life’s
@@ -106,7 +106,7 @@
     </section>
     <section class="c-author">
       <div class="c-author__container">
-        <h2 class="">About the author</h2>
+        <h1 class="">About the author</h1>
         <p>
           My name is Bode Abifarin and I am mom to Ethan and Nathan Abifarin
           (twin boys) 8 years old.
@@ -146,7 +146,7 @@
       </div>
     </section>
     <section class="c-reviews">
-      <h2 class="">The book reviews</h2>
+      <h1 class="">The book reviews</h1>
       <client-only>
         <flickity
           ref="flickity"
@@ -616,8 +616,8 @@
         <span class="u-font-400">6th of April, 2024</span> which is in:
       </p>
       <p class="c-countdown__timer">
-        {{ countDown.days }} day(s), {{ countDown.hrs }} hrs :
-        {{ countDown.mins }} min :
+        {{ countDown.days }} day<span v-if="countDown.days > 1">s</span>,
+        {{ countDown.hrs }} hrs : {{ countDown.mins }} min :
         <span class="c-countdown__timer-sec">{{ countDown.secs }}</span>
       </p>
     </section>
@@ -719,21 +719,51 @@ export default {
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 3rem;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 section {
   position: relative;
   width: 100vw;
+  padding: 25rem 2rem 10rem;
   left: calc(-50vw + 50%);
+
+  h1 {
+    margin-bottom: 5rem;
+  }
+
+  @include screen(med) {
+    padding: 15rem 2rem 5rem;
+  }
+
+  @include screen(small) {
+    padding-top: 4rem;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .c-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 19rem;
+  padding-top: 20rem;
+  padding-bottom: 0;
   text-align: center;
   background: linear-gradient(180deg, #fbeff4 0%, #fff 100%);
+
+  @include screen(med) {
+    padding-top: 15rem;
+  }
+
+  @include screen(small) {
+    padding-top: 10rem;
+    text-align: left;
+    align-items: flex-start;
+  }
 
   &__heading {
     max-width: 100rem;
@@ -741,22 +771,21 @@ section {
 
   &__subtext {
     max-width: 72rem;
-    margin-top: 5rem;
   }
 
   .button {
     --before-transform: scale(1.1);
-    --before-border: 1px dashed #1d1d1f;
+    --before-border: 1px dashed #1d1d1f8e;
     --after-transform: translate(50%, -30%) scale(0.7);
-    $size: 13rem;
+    --size: 13rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #1d1d1f;
     position: relative;
-    width: $size;
-    height: $size;
+    width: var(--size);
+    height: var(--size);
     border: none;
     border-radius: 100%;
     background: none;
@@ -764,6 +793,13 @@ section {
     font-weight: 500;
     font-size: 1.4rem;
     z-index: 3;
+
+    @include screen(small) {
+      --size: 8rem;
+      --after-transform: translate(55%, -35%) scale(0.7);
+      margin-top: 4rem;
+      font-size: 1.2rem;
+    }
 
     &::before {
       content: '';
@@ -811,26 +847,26 @@ section {
   margin-top: 10rem;
   // background: linear-gradient(180deg, #fff 0%, #effbf1 15%, #fff 100%);
   background: linear-gradient(180deg, #fff 0%, #effbf1 15%);
-  padding: 25rem 0 10rem;
+  // padding: 25rem 0 10rem;
 
   &__container {
     max-width: 70rem;
   }
 
-  h2 {
-    margin-bottom: 5rem;
-  }
-
-  p {
-    margin-top: 3rem;
-  }
+  // p:not(:first-child) {
+  //   margin-top: 3rem;
+  // }
 
   img {
     width: 50vw;
     height: auto;
     left: calc(-35vw + 50%);
-    margin: 4rem 0 1rem;
+    margin: 4rem 0;
     background: gray;
+
+    @include screen(small) {
+      width: 100%;
+    }
   }
 }
 
@@ -843,7 +879,14 @@ section {
   align-items: center;
   flex-direction: column-reverse;
   justify-content: center;
-  padding: 10rem 0;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  @include screen(small) {
+    position: unset;
+    width: 100%;
+    align-items: flex-start;
+  }
 
   &__links {
     display: flex;
@@ -856,9 +899,15 @@ section {
       text-decoration: none;
       font-family: 'ogg';
       font-size: 5rem;
+      line-height: 5rem;
       display: inline-block;
       z-index: 2;
       transition: color 0.14s linear, transform 0.4s $ease-out-expo;
+
+      @include screen(small) {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+      }
 
       &:hover {
         --color: #fc477d;
@@ -875,11 +924,20 @@ section {
         path {
           fill: var(--color);
           transition: inherit;
+
+          @include screen(small) {
+            transform: scale(0.8);
+            transform-origin: bottom left;
+          }
         }
       }
 
       &:first-child {
         margin-bottom: 6rem;
+
+        @include screen(small) {
+          margin-bottom: 3rem;
+        }
       }
     }
   }
@@ -889,8 +947,11 @@ section {
     min-width: 50rem;
     height: auto;
     object-fit: contain;
-    // transform: translateX(4rem);
-    // margin-left: -10rem;
+
+    @include screen(small) {
+      width: 100%;
+      min-width: unset;
+    }
   }
 }
 
@@ -905,6 +966,7 @@ section {
   }
 
   img {
+    width: 100%;
     max-height: 84rem;
     object-fit: cover;
     object-position: center;
@@ -915,13 +977,13 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25rem 0 10rem;
+  // padding: 25rem 0 10rem;
   background: linear-gradient(180deg, #eff6fb 0%, #f9effb 20%);
 
   &__flickity {
     width: 100vw;
-    margin-top: 10rem;
     height: auto;
+    margin-top: 3rem;
 
     .c-review {
       width: 50vw;
@@ -931,16 +993,32 @@ section {
       max-height: 80rem;
       overflow: scroll;
 
+      @include screen(small) {
+        width: 78vw;
+        margin: 0 1rem;
+        padding: 4rem 2rem 4rem;
+      }
+
       &__comment {
         font-size: 2.6rem;
         line-height: 3.6rem;
         font-style: italic;
         font-weight: 400;
+
+        @include screen(small) {
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
       }
 
       &__full {
         font-size: 1.7rem;
         margin-top: 3rem;
+
+        @include screen(small) {
+          font-size: 1.5rem;
+          margin-top: 2.5rem;
+        }
 
         p:not(:first-child) {
           margin-top: 3rem;
@@ -950,6 +1028,10 @@ section {
       &__reviewer {
         margin-top: 10rem;
         font-weight: 400;
+
+        @include screen(small) {
+          margin-top: 5rem;
+        }
       }
     }
 
@@ -969,21 +1051,32 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25rem 0 40rem;
+  // padding: 25rem 0 40rem;
   text-align: center;
   background: linear-gradient(180deg, #f9effb 0%, #fff 50%);
 
   &__timer {
     font-family: 'ogg';
     font-size: 5rem;
+    line-height: 5rem;
     margin-top: 6rem;
     color: #c72177;
     font-variant-numeric: tabular-nums;
+
+    @include screen(small) {
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      margin-top: 2rem;
+    }
 
     &-sec {
       display: inline-block;
       width: 4.5rem;
       text-align: left;
+
+      @include screen(small) {
+        width: 3rem;
+      }
     }
   }
 }
@@ -991,9 +1084,10 @@ section {
 .c-illustrations {
   display: flex;
   flex-wrap: wrap;
+  pointer-events: none;
 
   img {
-    width: 33vw;
+    width: 32vw;
     height: auto;
 
     &:nth-child(1) {
@@ -1015,18 +1109,38 @@ section {
     &:nth-child(5) {
       transform: scale(1.2) translate(0, -10%);
     }
+
+    @include screen(small) {
+      width: 100%;
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+        transform: scale(1.2);
+      }
+    }
   }
 }
 
 .c-footer {
-  margin-top: 18rem;
   display: flex;
   justify-content: space-between;
   width: inherit;
+  margin-top: 8rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+
+  @include screen(small) {
+    margin-top: 0rem;
+  }
 
   a {
     color: #c72177;
     text-decoration: none;
+
+    @include screen(small) {
+      display: inline-block;
+      margin-top: 1rem;
+    }
   }
 }
 </style>

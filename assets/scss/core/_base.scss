@@ -22,4 +22,9 @@ body {
   font-size: 1.8rem;
   line-height: 2.8rem;
   overflow-x: hidden;
+
+  @include screen(small) {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
 }
