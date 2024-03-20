@@ -719,8 +719,10 @@ export default {
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 3rem;
-  overflow-x: hidden;
-  max-width: 100vw;
+
+  @include screen(med) {
+    overflow-x: hidden;
+  }
 }
 
 section {
@@ -886,6 +888,8 @@ section {
     position: unset;
     width: 100%;
     align-items: flex-start;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
 
   &__links {
@@ -1124,13 +1128,17 @@ section {
 .c-footer {
   display: flex;
   justify-content: space-between;
-  width: inherit;
   margin-top: 8rem;
   padding: 0 2rem;
   flex-wrap: wrap;
+  width: 100%;
 
   @include screen(small) {
     margin-top: 0rem;
+
+    > * {
+      width: 100%;
+    }
   }
 
   a {
