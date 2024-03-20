@@ -38,12 +38,10 @@
           and enthusiasm. While Nathan struggles with the new experience, he
           gradually embraces it with the support of his family and coaches.
         </p>
-      </div>
-      <img
-        src="@/assets/images/book-illustration.jpg"
-        alt="book illustration"
-      />
-      <div class="c-book__container">
+        <img
+          src="@/assets/images/book-illustration.png"
+          alt="book illustration"
+        />
         <p>
           Ethan copes with illness and hospital visits by finding comfort in his
           family's care and routines. In the same vein, Nathan confronts his
@@ -623,7 +621,7 @@
     </section>
     <section class="c-illustrations">
       <img
-        src="@/assets/images/book-illustration.jpg"
+        src="@/assets/images/book-illustration.png"
         alt="book illustration"
       />
       <img
@@ -648,7 +646,7 @@
       />
     </section>
     <footer class="c-footer">
-      <span>© Bode Abifarin 2024 </span>
+      <span>© Bode Abifarin {{ new Date().getFullYear() }} </span>
       <span>
         Made with love by
         <a href="https://twitter.com/kolapo_" target="_blank"> Kolapo ❤️ </a>
@@ -733,10 +731,15 @@ section {
 
   h1 {
     margin-bottom: 5rem;
+    // text-align: center;
+  }
+
+  p {
+    // text-align: center;
   }
 
   @include screen(med) {
-    padding: 15rem 2rem 5rem;
+    padding: 15rem 2rem 8rem;
   }
 
   @include screen(small) {
@@ -753,7 +756,6 @@ section {
   flex-direction: column;
   align-items: center;
   padding-top: 20rem;
-  padding-bottom: 0;
   text-align: center;
   background: linear-gradient(180deg, #fbeff4 0%, #fff 100%);
 
@@ -846,7 +848,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10rem;
   // background: linear-gradient(180deg, #fff 0%, #effbf1 15%, #fff 100%);
   background: linear-gradient(180deg, #fff 0%, #effbf1 15%);
   // padding: 25rem 0 10rem;
@@ -864,16 +865,21 @@ section {
   }
 
   img {
-    width: 50vw;
+    width: 100%;
+    object-fit: contain;
     height: auto;
-    left: calc(-35vw + 50%);
     margin: 4rem 0;
-    background: gray;
 
     @include screen(small) {
       width: 100%;
     }
   }
+}
+
+.c-book img {
+  transform: scale(1.3) translateY(-2.5%);
+  pointer-events: none;
+  margin: 6rem 0;
 }
 
 .c-purchase {
@@ -886,14 +892,12 @@ section {
   flex-direction: column-reverse;
   justify-content: center;
   padding-top: 10rem;
-  padding-bottom: 10rem;
 
   @include screen(small) {
     position: unset;
     width: 100%;
     align-items: flex-start;
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
   }
 
   &__links {
@@ -941,10 +945,10 @@ section {
       }
 
       &:first-child {
-        margin-bottom: 6rem;
+        margin-bottom: 3.5rem;
 
         @include screen(small) {
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
         }
       }
     }
@@ -965,7 +969,6 @@ section {
 
 .c-author {
   // padding-top: 25rem;
-  margin-top: 0;
   // background: linear-gradient(180deg, #fff 0%, #fed2c0 100%);
   background: linear-gradient(180deg, #fff 0%, #eff6fb 15%);
 
@@ -978,6 +981,7 @@ section {
     max-height: 84rem;
     object-fit: cover;
     object-position: center;
+    background: rgb(226, 226, 226);
   }
 }
 
@@ -1001,8 +1005,8 @@ section {
       max-height: 80rem;
       overflow: scroll;
 
-      @include screen(small) {
-        width: 78vw;
+      @include screen(med) {
+        width: 80vw;
         margin: 0 1rem;
         padding: 4rem 2rem 4rem;
       }
@@ -1092,10 +1096,12 @@ section {
 .c-illustrations {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   pointer-events: none;
 
   img {
     width: 32vw;
+    min-width: 45rem;
     height: auto;
 
     &:nth-child(1) {
@@ -1118,8 +1124,13 @@ section {
       transform: scale(1.2) translate(0, -10%);
     }
 
+    @include screen(med) {
+      width: 80%;
+    }
+
     @include screen(small) {
       width: 100%;
+      min-width: unset;
 
       &:nth-child(odd),
       &:nth-child(even) {
