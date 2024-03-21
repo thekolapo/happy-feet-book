@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Happy Feet Book',
+    title: 'The Boys with the Happy Feet Dance',
     htmlAttrs: {
       lang: 'en',
     },
@@ -17,42 +17,49 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         name: 'keywords',
-        content: 'Happy Feet Book',
+        content: 'happy feet book, hapy feet book, bode abifarin',
       },
       {
         hid: 'description',
         name: 'description',
-        content: '',
+        content:
+          'A book by Bode Abifarin that follows two brothers, Nathan and Ethan, as they navigate their passions and life’s challenges all at the same time.',
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: '' },
-      { hid: 'og:title', property: 'og:title', content: 'Happy Feet Book' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'The Boys with the Happy Feet Dance',
+      },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '',
+        content: 'https://happyfeetbook.netlify.app/meta-image.png',
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: '',
+        content:
+          'A book by Bode Abifarin that follows two brothers, Nathan and Ethan, as they navigate their passions and life’s challenges all at the same time. ',
       },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: '' },
       {
         hid: 'twitter:title',
         property: 'twitter:title',
-        content: '',
+        content: 'The Boys with the Happy Feet Dance',
       },
       {
         hid: 'twitter:description',
         property: 'twitter:description',
-        content: '',
+        content:
+          'A book by Bode Abifarin that follows two brothers, Nathan and Ethan, as they navigate their passions and life’s challenges all at the same time. ',
       },
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: '',
+        content: 'https://happyfeetbook.netlify.app/meta-image.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
