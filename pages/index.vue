@@ -124,41 +124,28 @@
         <div class="c-author__container">
           <h1 ref="authorSectionHeading" class="">About the author</h1>
           <p>
-            My name is Bode Abifarin and I am mom to Ethan and Nathan Abifarin
-            (twin boys) 8 years old.
+            Bode Abifarin is the mother of eight-year-old twin boys, Ethan and
+            Nathan Abifarin. She is a C-level executive with over 21 years of
+            experience in the global finance and fintech space. She has also
+            taken courses in speech therapy, behaviour modification and ABA, to
+            help her children along their journey on the ASD spectrum, freely
+            sharing her knowledge with other young mums at her children’s school
+            and church community groups.
           </p>
           <p>
-            I am a C-level executive with over 21 years of experience. I worked
-            in KPMG for over 15 years before working in payments and Fintech. I
-            have taken several short courses in speech therapy, behaviour
-            modification and ABA to help my children along their journey. I have
-            shared my knowledge freely with other younger moms at my children’s
-            school and also at my church community groups. I have been active in
-            setting up a class for children on the spectrum in our Sunday
-            school.
+            Ethan was diagnosed when he turned three. His brother, Nathan, was
+            diagnosed at age four. Post-diagnosis, Bode went into research and
+            put together a team of therapists and facilitators to help the boys
+            develop life skills. She learnt about what food, fruits and
+            supplements were beneficial to them and got them involved in sports
+            and other outdoor games.
           </p>
           <p>
-            We discovered Ethan was on the spectrum when he turned 3 - he was
-            verbal but slowly started to lose his speech. We started therapy for
-            him immediately. His brother Nathan was not diagnosed till about 4
-            as he had no issues but we later started to see him regress. He also
-            started therapy post diagnosis.
-          </p>
-          <p>
-            I did a lot of research and put together a team of therapists and
-            facilitators to help the boys and opted for a Montessori school in
-            the morning and then therapy in the afternoon hours. I started
-            learning about how what foods, fruits and supplement beneficial to
-            them and also got them involved in sports - swimming, piano,
-            basketball, football with a lot of outdoor games and plays.
-          </p>
-          <p>
-            Today, they are both verbal, and we continue to journey to social
-            integration with a community of other moms on the spectrum. I am
-            currently writing a book on the different aspects of their lives -
-            The Adventures of the Boys with the Happy Feet Dance and it
-            chronicles their journey across different sports and everyday
-            living.
+            Today, they are both verbal as they continue the journey to social
+            integration with a community of other mums and children on the
+            spectrum. This journey inspired her to write The Boys with the Happy
+            Feet Dance, which chronicles their experience with learning
+            different sporting and everyday living activities.
           </p>
           <img src="@/assets/images/bode.jpeg" alt="author's picture" />
         </div>
@@ -864,7 +851,7 @@ export default {
     }
 
     @include screen(small) {
-      padding-top: 15rem;
+      padding-top: 12rem;
       text-align: left;
       align-items: flex-start;
     }
