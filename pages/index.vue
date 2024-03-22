@@ -113,6 +113,21 @@
               />
             </svg>
           </a>
+          <a href="https://shorturl.at/bmJNR" target="_blank">
+            RSVP for the book launch
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.5398 1.96017C27.5398 1.40788 27.0921 0.960167 26.5398 0.960167L17.5398 0.960167C16.9875 0.960167 16.5398 1.40788 16.5398 1.96017C16.5398 2.51245 16.9875 2.96017 17.5398 2.96017L25.5398 2.96017L25.5398 10.9602C25.5398 11.5125 25.9875 11.9602 26.5398 11.9602C27.0921 11.9602 27.5398 11.5125 27.5398 10.9602L27.5398 1.96017ZM2.16707 27.7471L27.2469 2.66727L25.8327 1.25306L0.752854 26.3329L2.16707 27.7471Z"
+                fill="#FF5959"
+              />
+            </svg>
+          </a>
         </div>
         <img
           class="c-purchase__book-render"
@@ -1050,8 +1065,8 @@ export default {
         transition: color 0.14s linear, transform 0.4s $ease-out-expo;
 
         @include screen(small) {
-          font-size: 2.8rem;
-          line-height: 2.8rem;
+          font-size: 2.7rem;
+          line-height: 2.7rem;
         }
 
         &:hover {
@@ -1077,7 +1092,7 @@ export default {
           }
         }
 
-        &:first-child {
+        &:not(:last-child) {
           margin-bottom: 3.5rem;
 
           @include screen(small) {
