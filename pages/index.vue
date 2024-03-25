@@ -798,9 +798,6 @@ export default {
       observableSections.forEach((section) => {
         observer.observe(section)
       })
-
-      if (this.audioHasLoaded && this.audioElement.paused)
-        this.audioElement.play()
     },
     onElementObserved(entries) {
       entries.forEach((entry) => {
@@ -822,8 +819,9 @@ export default {
       })
     },
     toggleAudio() {
-      if (this.audioElement.paused) this.audioElement.play()
-      else this.audioElement.pause()
+      if (this.audioHasLoaded)
+        if (this.audioElement.paused) this.audioElement.play()
+        else this.audioElement.pause()
     },
   },
 }

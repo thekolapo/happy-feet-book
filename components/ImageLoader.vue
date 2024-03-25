@@ -63,19 +63,16 @@ export default {
       this.$refs.imgLoader.style.setProperty('--stroke-dashoffset', '375')
       this.$refs.clickIndicator.style.opacity = 1
 
-      const hideLoader = () => {
+      this.$refs.imgLoader.addEventListener('click', () => {
         if (this.hiddenLoader) return
         this.hiddenLoader = true
         this.$refs.clickIndicator.style.transition = '0.6s linear 0s'
         this.$refs.clickIndicator.style.opacity = 0
+        this.$parent.toggleAudio()
 
         setTimeout(() => {
           this.$parent.showPage()
         }, 600)
-      }
-
-      this.$refs.imgLoader.addEventListener('click', () => {
-        hideLoader()
       })
     },
   },
