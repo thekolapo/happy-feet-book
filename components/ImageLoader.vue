@@ -63,7 +63,7 @@ export default {
       this.$refs.imgLoader.style.setProperty('--stroke-dashoffset', '375')
       this.$refs.clickIndicator.style.opacity = 1
 
-      this.$refs.imgLoader.addEventListener('click', () => {
+      const hideLoader = () => {
         if (this.hiddenLoader) return
         this.hiddenLoader = true
         this.$refs.clickIndicator.style.transition = '0.6s linear 0s'
@@ -72,6 +72,16 @@ export default {
         setTimeout(() => {
           this.$parent.showPage()
         }, 600)
+      }
+
+      // handle click event for desktop
+      this.$refs.imgLoader.addEventListener('click', () => {
+        hideLoader()
+      })
+
+      // handle touch event for mobile and tablet
+      this.$refs.imgLoader.addEventListener('touchend', () => {
+        hideLoader()
       })
     },
   },

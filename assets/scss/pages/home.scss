@@ -1,11 +1,12 @@
 .home {
+  --overflow: unset;
   position: relative;
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 3rem;
 
   @include screen(med) {
-    // overflow-x: hidden;
+    overflow-x: var(--overflow);
   }
 
   section {
@@ -23,7 +24,7 @@
     }
 
     @include screen(small) {
-      padding-top: 4rem;
+      padding-top: 5.3rem;
 
       h1 {
         margin-bottom: 2rem;
@@ -38,6 +39,10 @@
     top: 2rem;
     z-index: 3;
     padding: 0 2rem;
+
+    @include screen(small) {
+      top: 2.6rem;
+    }
 
     &__switch {
       position: relative;
@@ -146,7 +151,7 @@
     }
 
     @include screen(small) {
-      padding-top: 12rem;
+      padding-top: 13.2rem;
       text-align: left;
       align-items: flex-start;
     }

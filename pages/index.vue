@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div ref="home" class="home">
     <image-loader v-if="heroImgIsLoading" ref="imgLoader" />
     <template v-else>
       <nav class="c-nav">
@@ -779,6 +779,7 @@ export default {
       }, 10)
     },
     init() {
+      this.$refs.home.style.setProperty('--overflow', 'hidden')
       this.countdownTimer('04/6/2024 00:00 AM')
 
       // This triggers the text reveal animation
