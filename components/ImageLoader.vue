@@ -68,7 +68,6 @@ export default {
         this.hiddenLoader = true
         this.$refs.clickIndicator.style.transition = '0.6s linear 0s'
         this.$refs.clickIndicator.style.opacity = 0
-        this.$parent.toggleAudio()
 
         setTimeout(() => {
           this.$parent.showPage()
