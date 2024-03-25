@@ -2,6 +2,12 @@
   <div class="home">
     <image-loader v-if="heroImgIsLoading" ref="imgLoader" />
     <template v-else>
+      <nav class="c-nav">
+        <label class="c-nav__switch">
+          <input type="checkbox" checked @click="toggleAudio()" />
+          <span class="slider round"></span>
+        </label>
+      </nav>
       <section class="c-hero">
         <h1 ref="heroHeading" class="c-hero__heading">
           The Boys with the Happy Feet Dance
@@ -708,7 +714,12 @@ export default {
       },
       exceededLaunchTime: false,
       heroImgIsLoading: true,
+      audioElement: null,
+      audioHasLoaded: false,
     }
+  },
+  mounted() {
+    this.loadAudio()
   },
   methods: {
     countdownTimer(dt) {
@@ -760,12 +771,8 @@ export default {
       }
 
       animateText()
-      // document.getAnimations().forEach((anim) => {
-      //   anim.cancel()
-      //   anim.play()
-      // })
     },
-    hideImgLoader() {
+    showPage() {
       this.heroImgIsLoading = false
       setTimeout(() => {
         this.init()
@@ -790,6 +797,9 @@ export default {
       observableSections.forEach((section) => {
         observer.observe(section)
       })
+
+      if (this.audioHasLoaded && !this.audioElement.playing)
+        this.audioElement.play()
     },
     onElementObserved(entries) {
       entries.forEach((entry) => {
@@ -799,18 +809,34 @@ export default {
         }
       })
     },
+    loadAudio() {
+      this.audioElement = new Audio(
+        'https://github.com/thekolapo/happy-feet-book/blob/master/assets/audio/tears-of-beauty.mp3?raw=true'
+      )
+      this.audioElement.loop = true
+      this.audioElement.volume = 0.4
+
+      this.audioElement.addEventListener('loadeddata', () => {
+        this.audioHasLoaded = true
+      })
+    },
+    toggleAudio() {
+      if (this.audioElement.paused) this.audioElement.play()
+      else this.audioElement.pause()
+    },
   },
 }
 </script>
 
 <style lang="scss">
 .home {
+  position: relative;
   max-width: 128rem;
   margin: 0 auto;
   padding-bottom: 3rem;
 
   @include screen(med) {
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
 
   section {
@@ -829,7 +855,7 @@ export default {
     }
 
     @include screen(med) {
-      padding: 15rem 2rem 8rem;
+      padding-top: 15rem;
     }
 
     @include screen(small) {
@@ -837,6 +863,96 @@ export default {
 
       h1 {
         margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .c-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 2rem;
+    z-index: 3;
+    padding: 0 2rem;
+
+    &__switch {
+      position: relative;
+      width: 60px;
+      height: 34px;
+      float: right;
+      transform: scale(0.75);
+      transform-origin: right;
+      display: flex;
+      align-items: center;
+
+      @include screen(small) {
+        transform: scale(0.7);
+      }
+
+      &::before {
+        content: 'Music';
+        margin-left: -7rem;
+        transform: scale(1.2);
+        font-weight: 400;
+        pointer-events: none;
+
+        @include screen(small) {
+          margin-left: -6.5rem;
+          transform: scale(1.3);
+        }
+      }
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: '';
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #fc477d;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #fc477d;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
       }
     }
   }
@@ -1064,6 +1180,11 @@ export default {
         z-index: 2;
         transition: color 0.14s linear, transform 0.4s $ease-out-expo;
 
+        @include screen(med) {
+          font-size: 3.8rem;
+          line-height: 3rem;
+        }
+
         @include screen(small) {
           font-size: 2.7rem;
           line-height: 2.7rem;
@@ -1219,14 +1340,13 @@ export default {
       font-family: 'ogg';
       font-size: 5rem;
       line-height: 5rem;
-      margin-top: 6rem;
+      margin-top: 2rem;
       color: #c72177;
       font-variant-numeric: tabular-nums;
 
       @include screen(small) {
         font-size: 2.8rem;
         line-height: 2.8rem;
-        margin-top: 2rem;
       }
 
       &-sec {

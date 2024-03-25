@@ -12,6 +12,13 @@
       >
         <circle cx="60" cy="60" r="59.5" stroke="black" stroke-width="0.5" />
       </svg>
+      <div ref="clickIndicator" class="c-image-loader__click">
+        <p>Click anywhere to continue</p>
+        <p>
+          A calm background music is part of the website experience, with the
+          option to disable it at any time.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -21,20 +28,23 @@ export default {
   data() {
     return {
       counter: 0,
+      hiddenLoader: false,
     }
   },
   mounted() {
-    this.loadHeroImage()
+    this.loadImage()
     this.startCounter()
   },
   methods: {
-    loadHeroImage() {
+    loadImage() {
       const vm = this
       const img = new Image()
       img.src = require(`@/assets/images/book-render.png`)
 
       img.onload = () => {
-        vm.completeLoaderAnim()
+        setTimeout(() => {
+          vm.completeLoaderAnim()
+        }, 1800)
       }
     },
     startCounter() {
@@ -48,17 +58,21 @@ export default {
       }, 1000)
     },
     completeLoaderAnim() {
-      setTimeout(() => {
-        this.counter = 100
-        this.$refs.imgLoader.style.setProperty('--text-translate-value', '100%')
-        this.$refs.imgLoader.style.setProperty('--stroke-dashoffset', '375')
-        this.hideImgLoader()
-      }, 1800)
-    },
-    hideImgLoader() {
-      setTimeout(() => {
-        this.$parent.hideImgLoader()
-      }, 1500)
+      this.counter = '100'
+      this.$refs.imgLoader.style.setProperty('--text-translate-value', '100%')
+      this.$refs.imgLoader.style.setProperty('--stroke-dashoffset', '375')
+      this.$refs.clickIndicator.style.opacity = 1
+
+      this.$refs.imgLoader.addEventListener('click', () => {
+        if (this.hiddenLoader) return
+        this.hiddenLoader = true
+        this.$refs.clickIndicator.style.transition = '0.6s linear 0s'
+        this.$refs.clickIndicator.style.opacity = 0
+
+        setTimeout(() => {
+          this.$parent.showPage()
+        }, 600)
+      })
     },
   },
 }
@@ -167,6 +181,36 @@ export default {
 
     @media screen and (min-width: 1920px) {
       --size: 10.12vw;
+    }
+  }
+
+  &__click {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    z-index: 4;
+    transform: translateY(-40%);
+    opacity: 0;
+    transition: opacity 1.8s linear 1.7s;
+    padding: 0 1.5rem;
+
+    @include screen(small) {
+      transform: translateY(-10%);
+    }
+
+    > :first-child {
+      font-family: 'Canela';
+      font-size: 3rem;
+
+      @include screen(small) {
+        font-size: 2.7rem;
+      }
+    }
+
+    > :last-child {
+      font-size: 1.6rem;
+      max-width: 45rem;
+      margin: 1.5rem auto 0;
     }
   }
 }
