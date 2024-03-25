@@ -74,13 +74,7 @@ export default {
         }, 600)
       }
 
-      // handle click event for desktop
       this.$refs.imgLoader.addEventListener('click', () => {
-        hideLoader()
-      })
-
-      // handle touch event for mobile and tablet
-      this.$refs.imgLoader.addEventListener('touchend', () => {
         hideLoader()
       })
     },

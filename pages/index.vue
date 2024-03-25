@@ -1,6 +1,6 @@
 <template>
   <div ref="home" class="home">
-    <image-loader v-if="heroImgIsLoading" ref="imgLoader" />
+    <image-loader v-if="authorImgIsLoading" ref="imgLoader" />
     <template v-else>
       <nav class="c-nav">
         <label class="c-nav__switch">
@@ -713,7 +713,7 @@ export default {
         secs: '',
       },
       exceededLaunchTime: false,
-      heroImgIsLoading: true,
+      authorImgIsLoading: true,
       audioElement: null,
       audioHasLoaded: false,
     }
@@ -773,7 +773,7 @@ export default {
       animateText()
     },
     showPage() {
-      this.heroImgIsLoading = false
+      this.authorImgIsLoading = false
       setTimeout(() => {
         this.init()
       }, 10)
@@ -799,7 +799,7 @@ export default {
         observer.observe(section)
       })
 
-      if (this.audioHasLoaded && !this.audioElement.playing)
+      if (this.audioHasLoaded && this.audioElement.paused)
         this.audioElement.play()
     },
     onElementObserved(entries) {
