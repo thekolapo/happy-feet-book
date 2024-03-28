@@ -173,6 +173,37 @@
       </section>
       <section class="c-reviews">
         <h1 ref="reviewsSectionHeading">The book reviews</h1>
+        <div class="c-reviews__arrow-btns">
+          <button
+            @click="
+              () => {
+                $refs.flickity.stopPlayer()
+                $refs.flickity.previous()
+              }
+            "
+          >
+            <!--prettier-ignore-->
+            <svg width="95" height="50" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.4697 24.4697C24.1768 24.7626 24.1768 25.2374 24.4697 25.5303L29.2426 30.3033C29.5355 30.5962 30.0104 30.5962 30.3033 30.3033C30.5962 30.0104 30.5962 29.5355 30.3033 29.2426L26.0607 25L30.3033 20.7574C30.5962 20.4645 30.5962 19.9896 30.3033 19.6967C30.0104 19.4038 29.5355 19.4038 29.2426 19.6967L24.4697 24.4697ZM95 24.25L25 24.25V25.75L95 25.75V24.25Z" fill="#585858"/>
+            <circle cx="25" cy="25" r="24.5" stroke="#585858"/>
+          </svg>
+          </button>
+
+          <button
+            @click="
+              () => {
+                $refs.flickity.stopPlayer()
+                $refs.flickity.next()
+              }
+            "
+          >
+            <!--prettier-ignore-->
+            <svg width="95" height="50" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24.4697 24.4697C24.1768 24.7626 24.1768 25.2374 24.4697 25.5303L29.2426 30.3033C29.5355 30.5962 30.0104 30.5962 30.3033 30.3033C30.5962 30.0104 30.5962 29.5355 30.3033 29.2426L26.0607 25L30.3033 20.7574C30.5962 20.4645 30.5962 19.9896 30.3033 19.6967C30.0104 19.4038 29.5355 19.4038 29.2426 19.6967L24.4697 24.4697ZM95 24.25L25 24.25V25.75L95 25.75V24.25Z" fill="#585858"/>
+            <circle cx="25" cy="25" r="24.5" stroke="#585858"/>
+          </svg>
+          </button>
+        </div>
         <client-only>
           <flickity
             ref="flickity"
