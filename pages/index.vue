@@ -546,6 +546,13 @@
             </div>
             <div class="c-review">
               <p class="c-review__comment">
+                “This book enlightens people about the daily life of special
+                people. It helps to spread awareness in a playful joyous way.”
+              </p>
+              <p class="c-review__reviewer">— Motunyosoluwa Mesele</p>
+            </div>
+            <div class="c-review">
+              <p class="c-review__comment">
                 “On every page, you see beauty, talent, love and above all,
                 resilience. I am so inspired by the boys with the happy feet.”
               </p>
@@ -674,6 +681,15 @@
                 — Onyinye Odinmah, committee member, Akada Children’s Book
                 Festival
               </p>
+            </div>
+            <div class="c-review">
+              <p class="c-review__comment">
+                “This book enlightens the readers that autism is not a barrier
+                but rather, a gift. It shows a glimpse of life through the eyes
+                of the boys and we get to really understand what being on the
+                spectrum is all about.”
+              </p>
+              <p class="c-review__reviewer">— Darasimi Mesele</p>
             </div>
           </flickity>
         </client-only>
