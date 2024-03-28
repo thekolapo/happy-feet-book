@@ -10,7 +10,7 @@
   justify-content: center;
   --text-anim-duration: 1s;
   --text-translate-value: 0%;
-  --stroke-length: 375;
+  --stroke-length: 438;
   --stroke-dashoffset: 0;
   left: calc(-50vw + 50%);
   background: linear-gradient(180deg, #fbeff4 0%, #fff 50%);
@@ -18,12 +18,6 @@
   @keyframes slideup {
     from {
       transform: translateY(100%);
-    }
-  }
-
-  @keyframes drawcircle {
-    from {
-      stroke-dashoffset: var(--stroke-length);
     }
   }
 
@@ -48,7 +42,7 @@
 
   &__counter {
     position: relative;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-family: 'Canela';
     font-variant-numeric: tabular-nums;
 
@@ -80,26 +74,45 @@
     transform: translateY(100%);
   }
 
-  &__stroke {
-    --size: 170px;
-    $transition-duration: 0.6s;
+  svg {
     position: absolute;
-    z-index: 3;
-    width: var(--size);
-    height: var(--size);
-    opacity: 0;
-    stroke-dasharray: var(--stroke-length);
-    stroke-dashoffset: var(--stroke-dashoffset);
-    transform: rotate(-90deg);
-    transition: $transition-duration ease-out 0.5s;
-    animation: drawcircle $transition-duration ease-out
-        calc(var(--text-anim-duration) - #{$transition-duration}),
-      reveal 0s linear
-        calc(var(--text-anim-duration) - #{$transition-duration} + 50ms)
-        forwards;
+    transform: scale(1.5);
+    opacity: 1;
+    overflow: show;
 
-    @media screen and (min-width: 1920px) {
-      --size: 10.12vw;
+    @include screen('small') {
+      transform: scale(1.35);
+    }
+
+    path {
+      $transition-duration: 0.6s;
+      --direction: forwards;
+      --delay: 1.2s;
+      stroke-width: 0.4;
+      stroke: #1d1d1d;
+      stroke-dasharray: var(--stroke-length);
+      stroke-dashoffset: var(--stroke-dashoffset);
+      transform-origin: center;
+      transition: $transition-duration ease-out 0.5s;
+      animation: rotate 26s linear var(--delay) infinite var(--direction),
+        drawstroke 1.8s ease-out;
+
+      &:nth-child(2) {
+        --delay: 0.2s;
+        --direction: reverse;
+      }
+    }
+
+    @keyframes drawstroke {
+      from {
+        stroke-dashoffset: var(--stroke-length);
+      }
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
     }
   }
 
