@@ -60,6 +60,11 @@
       &:after {
         content: '%';
       }
+
+      &::before {
+        content: '';
+        font-family: 'Ogg';
+      }
     }
   }
 
