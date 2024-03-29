@@ -62,7 +62,16 @@ export default {
         content: 'https://happyfeetbook.netlify.app/meta-image.png',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preload',
+        type: 'font/ttf',
+        href: '~/assets/fonts/Ogg-Regular.ttf',
+        as: 'font',
+        crossorigin: true,
+      },
+    ],
   },
 
   env: {},
