@@ -27,7 +27,8 @@
               stroke-width="0.7"
             />
           </svg>
-          <span>Preorder</span>
+          <span v-if="!exceededLaunchTime">Preorder</span>
+          <span v-else>Buy</span>
         </a>
       </section>
       <section class="c-book">
@@ -104,7 +105,7 @@
               />
             </svg>
           </a>
-          <a href="" target="_blank">
+          <a href="https://www.amazon.com/dp/B0CW19Y4CZ" target="_blank">
             Buy on Amazon
             <svg
               width="28"
