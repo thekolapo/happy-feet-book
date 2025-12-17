@@ -120,7 +120,10 @@
               />
             </svg>
           </a>
-          <a href="https://shorturl.at/bmJNR" target="_blank">
+          <a
+            href="https://strataox.notion.site/2cc15ec94ffb80a9963ac93f1a00b970"
+            target="_blank"
+          >
             RSVP for the book launch
             <svg
               width="28"
