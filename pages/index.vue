@@ -120,24 +120,6 @@
               />
             </svg>
           </a>
-          <!-- <a
-            href="https://strataox.notion.site/2cc15ec94ffb80a9963ac93f1a00b970"
-            target="_blank"
-          >
-            RSVP for the book reading
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M27.5398 1.96017C27.5398 1.40788 27.0921 0.960167 26.5398 0.960167L17.5398 0.960167C16.9875 0.960167 16.5398 1.40788 16.5398 1.96017C16.5398 2.51245 16.9875 2.96017 17.5398 2.96017L25.5398 2.96017L25.5398 10.9602C25.5398 11.5125 25.9875 11.9602 26.5398 11.9602C27.0921 11.9602 27.5398 11.5125 27.5398 10.9602L27.5398 1.96017ZM2.16707 27.7471L27.2469 2.66727L25.8327 1.25306L0.752854 26.3329L2.16707 27.7471Z"
-                fill="#FF5959"
-              />
-            </svg>
-          </a> -->
         </div>
         <img
           class="c-purchase__book-render"
@@ -585,12 +567,12 @@
                   human ability to thrive despite adversity.
                 </p>
                 <p>
-                  Through Mrs Abifarin’s beautifully crafted words, readers will
+                  Through Mrs Abifarin's beautifully crafted words, readers will
                   find inspiration, empathy and hope, a guiding light for
                   families, educators and society to better understand and
                   embrace individuals with needs as we all, without exception,
                   have a few needs peculiar to each person; either socially or
-                  otherwise. In sharing her family’s story, Mrs Abifarin shows
+                  otherwise. In sharing her family's story, Mrs Abifarin shows
                   the world what it truly means to embrace differences, redefine
                   success and celebrate the remarkable potential that lies
                   within us all.
