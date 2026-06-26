@@ -124,6 +124,17 @@
         border-radius: 50%;
       }
     }
+
+    &__banner {
+      background-color: #fc477d73;
+      color: #1d1d1f;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 1rem;
+      border-radius: 40px;
+      margin: 0 auto;
+      left: 0;
+    }
   }
 
   .c-hero {
@@ -277,6 +288,7 @@
   }
 
   .c-book,
+  .c-comic,
   .c-author {
     display: flex;
     flex-direction: column;
@@ -315,6 +327,12 @@
     margin: 6rem 0;
   }
 
+  .c-comic {
+    img {
+      margin: 2rem 0 -2rem;
+    }
+  }
+
   .c-purchase {
     position: relative;
     width: 100vw;
@@ -331,6 +349,10 @@
       width: 100%;
       align-items: flex-start;
       padding-top: 2rem;
+    }
+
+    &--comic {
+      padding-top: 0rem;
     }
 
     &__links {

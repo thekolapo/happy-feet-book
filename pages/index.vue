@@ -120,7 +120,7 @@
               />
             </svg>
           </a>
-          <a
+          <!-- <a
             href="https://strataox.notion.site/2cc15ec94ffb80a9963ac93f1a00b970"
             target="_blank"
           >
@@ -137,13 +137,68 @@
                 fill="#FF5959"
               />
             </svg>
-          </a>
+          </a> -->
         </div>
         <img
           class="c-purchase__book-render"
           src="@/assets/images/book-render.png"
           alt="book render image"
         />
+      </section>
+      <section class="c-comic">
+        <div class="c-comic__container">
+          <h1 ref="comicSectionHeading" class="">Now available as a comic</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets.
+          </p>
+          <img
+            class="c-comic__img"
+            src="@/assets/images/comic-illustration-1.png"
+            alt="comic illustration"
+          />
+        </div>
+      </section>
+      <section class="c-purchase c-purchase--comic">
+        <div class="c-purchase__links">
+          <a
+            href="https://drive.google.com/file/d/1iYecZ0o-DIhw4eSo-9HzhYnpSasbpVMv/view"
+            target="_blank"
+          >
+            Preview comic
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.5398 1.96017C27.5398 1.40788 27.0921 0.960167 26.5398 0.960167L17.5398 0.960167C16.9875 0.960167 16.5398 1.40788 16.5398 1.96017C16.5398 2.51245 16.9875 2.96017 17.5398 2.96017L25.5398 2.96017L25.5398 10.9602C25.5398 11.5125 25.9875 11.9602 26.5398 11.9602C27.0921 11.9602 27.5398 11.5125 27.5398 10.9602L27.5398 1.96017ZM2.16707 27.7471L27.2469 2.66727L25.8327 1.25306L0.752854 26.3329L2.16707 27.7471Z"
+                fill="#FF5959"
+              />
+            </svg>
+          </a>
+          <a href="https://www.amazon.com/dp/B0CW19Y4CZ" target="_blank">
+            Pre-order on Amazon
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.5398 1.96017C27.5398 1.40788 27.0921 0.960167 26.5398 0.960167L17.5398 0.960167C16.9875 0.960167 16.5398 1.40788 16.5398 1.96017C16.5398 2.51245 16.9875 2.96017 17.5398 2.96017L25.5398 2.96017L25.5398 10.9602C25.5398 11.5125 25.9875 11.9602 26.5398 11.9602C27.0921 11.9602 27.5398 11.5125 27.5398 10.9602L27.5398 1.96017ZM2.16707 27.7471L27.2469 2.66727L25.8327 1.25306L0.752854 26.3329L2.16707 27.7471Z"
+                fill="#FF5959"
+              />
+            </svg>
+          </a>
+        </div>
       </section>
       <section class="c-author">
         <div class="c-author__container">
@@ -154,7 +209,7 @@
             experience in the global finance and fintech space. She has also
             taken courses in speech therapy, behaviour modification and ABA, to
             help her children along their journey on the ASD spectrum, freely
-            sharing her knowledge with other young mums at her children’s school
+            sharing her knowledge with other young mums at her children's school
             and church community groups.
           </p>
           <p>
@@ -842,6 +897,7 @@ export default {
       const observer = new IntersectionObserver(this.onElementObserved)
       const observableSections = [
         this.$refs.bookSectionHeading,
+        this.$refs.comicSectionHeading,
         this.$refs.authorSectionHeading,
         this.$refs.reviewsSectionHeading,
       ]
