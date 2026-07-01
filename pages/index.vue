@@ -129,14 +129,25 @@
       </section>
       <section class="c-comic">
         <div class="c-comic__container">
-          <h1 ref="comicSectionHeading" class="">Now available as a comic</h1>
+          <h1 ref="comicSectionHeading" class="">
+            They're back. This time in full colour
+          </h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since 1966, when designers at Letraset and James Mosley, the
-            librarian at St Bride Printing Library in London, took a 1914 Cicero
-            translation and scrambled it to make dummy text for Letraset's Body
-            Type sheets.
+            The Boys With the Happy Feet Dance returns this July as an all-new
+            comic book adaptation, bringing Nathan and Ethan's joyful world to
+            life with new vibrant illustrations, the same unforgettable
+            adventures and every happy-footed moment you've fallen in love with.
+          </p>
+          <p>
+            Join the
+            <a
+              href="https://drive.google.com/file/d/1iYecZ0o-DIhw4eSo-9HzhYnpSasbpVMv/view"
+              target="_blank"
+              class="link"
+            >
+              waitlist
+            </a>
+            to be among the first to read it.
           </p>
           <img
             class="c-comic__img"
@@ -165,8 +176,8 @@
               />
             </svg>
           </a>
-          <a href="https://www.amazon.com/dp/B0CW19Y4CZ" target="_blank">
-            Pre-order on Amazon
+          <a href="https://forms.gle/EugqgrAPMo6Hmnoe9" target="_blank">
+            Pre-order
             <svg
               width="28"
               height="28"
